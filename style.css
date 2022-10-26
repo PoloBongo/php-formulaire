@@ -1,0 +1,52 @@
+.card-body { /* css du formulaire basique */
+	width: 250px;
+	height: 530px;
+	display: flex;
+	flex-direction: none;
+	background: #D6C9B3;
+	border: 2px dashed rgb(0, 0, 0); /* contour autour de la carte */
+}
+
+.card-center { /* pour que les bouttons soit espacé et non collé */
+	display: flex;
+	flex-direction: column;
+}
+
+#position-admin-button { /* button espace admin format ordinateur */
+    position: relative;
+    top: -555px;
+    left: 1688px;
+}
+
+@media screen and (max-width: 851px) { /* Quand quelqu'un est sur téléphone, le cadre s'adapte à la taille du téléphone. */
+    .card-body:hover  {
+        width: 340px;
+        height: 550px;
+    }
+  }
+
+  @media screen and (max-width: 851px) { /* Quand quelqu'un est sur téléphone, le cadre s'adapte à la taille du téléphone. */
+    .card-body { /* css du formulaire basique sans le curseur dessus */
+        width: 250px;
+        height: 530px;
+        display: flex;
+        flex-direction: none;
+        background: #D6C9B3;
+        transition-property: width, height;
+        transition-duration: 2s;
+        border: 2px dashed rgb(0, 0, 0);
+    }
+    .card-body:hover  {
+        width: 340px;
+        height: 550px;
+        display: flex;
+        flex-direction: column;
+        background-color: #E19313;
+        border: 4px dashed rgb(0, 0, 0); /* bordure noir sur le côté */
+    }
+    #position-admin-button { /* button espace admin format téléphone */
+        position: relative;
+        top: -0px;
+        left: 10px;
+    }
+  }
