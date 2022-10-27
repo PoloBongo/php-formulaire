@@ -38,16 +38,33 @@
 <div id="position-admin-button">
     <button class="btn btn-dark py-1"><a href="connexion.php">Se connecter - Espace Admin</a></button> <!-- boutton pour se connecter à l'espace admin -->
 </div>
-        <?php
-        // 
-        ?>
 
         <?php
 
             if($_POST){
+
+                $servname = 'localhost';
+                $user = 'root';
+                $pass = 'root';
+                $dbname = 'formulaire';
+                
+                // creer la bdd dans phpmyadmin
+                try{
+                    $dbco = new PDO("mysql:host=$servname", $user, $pass);
+                    $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    
+                    $sql = "CREATE DATABASE IF NOT EXISTS formulaire";
+                    $dbco->exec($sql);
+                    
+                    echo '';
+                }
+                
+                catch(PDOException $e){
+                    echo "Erreur : " . $e->getMessage();
+                }
             
             $servname = 'localhost';
-            $dbname = 'contacts';
+            $dbname = 'formulaire';
             $user = 'root';
             $pass = 'root';
             try{
@@ -76,7 +93,7 @@
         
             
                 $servname = 'localhost';
-                $dbname = 'contacts';
+                $dbname = 'formulaire';
                 $user = 'root';
                 $pass = 'root';
                 
@@ -97,26 +114,6 @@
                 " . $conn->error;
                 }
             };
-
-            $servname = 'localhost';
-                $user = 'root';
-                $pass = 'root';
-                $dbname = 'ContactMe';
-                
-                // creer la bdd dans phpmyadmin
-                try{
-                    $dbco = new PDO("mysql:host=$servname", $user, $pass);
-                    $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    
-                    $sql = "CREATE DATABASE IF NOT EXISTS ContactMe";
-                    $dbco->exec($sql);
-                    
-                    echo '';
-                }
-                
-                catch(PDOException $e){
-                    echo "Erreur : " . $e->getMessage();
-                }
         
         ?>
 

@@ -32,7 +32,7 @@
 
             <?php
                 $servname = 'localhost';
-                $dbname = 'contacts';
+                $dbname = 'formulaire';
                 $user = 'root';
                 $pass = 'root';
 

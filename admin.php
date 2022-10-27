@@ -10,13 +10,13 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
     <body>
-        <button class="btn btn-dark py-1"><a href="http://localhost/php-bongo/intro.php" style="color:red">Revenir au formulaire</a></button> <!-- boutton pour revenir au formulaire de base -->
+        <button class="btn btn-dark py-1"><a href="http://localhost/php-formulaire/intro.php" style="color:red">Revenir au formulaire</a></button> <!-- boutton pour revenir au formulaire de base -->
         <br>
         <br>
         <table>
             <?php
                 $servname = 'localhost';
-                $dbname = 'contacts';
+                $dbname = 'formulaire';
                 $user = 'root';
                 $pass = 'root';
 
