@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulaire</title>
     <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -38,9 +38,7 @@
 <div id="position-admin-button">
     <button class="btn btn-dark py-1"><a href="connexion.php">Se connecter - Espace Admin</a></button> <!-- boutton pour se connecter à l'espace admin -->
 </div>
-
         <?php
-
             if($_POST){
 
                 $servname = 'localhost';
@@ -63,35 +61,35 @@
                     echo "Erreur : " . $e->getMessage();
                 }
             
-            $servname = 'localhost';
-            $dbname = 'formulaire';
-            $user = 'root';
-            $pass = 'root';
-            try{
-                $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
-                $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                // créer la table contacts avec des données dedans ( que si elle n'existe pas )
-                $sql = "CREATE TABLE IF NOT EXISTS contacts(
-                        Id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-                        Name VARCHAR(30) NOT NULL,
-                        Surname VARCHAR(30) NOT NULL,
-                        Mail VARCHAR(50) NOT NULL,
-                        Phone VARCHAR(15) NOT NULL,
-                        Objet VARCHAR(200) NOT NULL,
-                        DateInscription TIMESTAMP,
-                        UNIQUE(Mail))";
+                $servname = 'localhost';
+                $dbname = 'formulaire';
+                $user = 'root';
+                $pass = 'root';
+                try{
+                    $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
+                    $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    // créer la table contacts avec des données dedans ( que si elle n'existe pas )
+                    $sql = "CREATE TABLE IF NOT EXISTS contacts(
+                            Id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                            Name VARCHAR(30) NOT NULL,
+                            Surname VARCHAR(30) NOT NULL,
+                            Mail VARCHAR(50) NOT NULL,
+                            Phone VARCHAR(15) NOT NULL,
+                            Objet VARCHAR(200) NOT NULL,
+                            DateInscription TIMESTAMP,
+                            UNIQUE(Mail))";
                 
-                $dbco->exec($sql);
-                echo 'Table bien créée !';
-                echo "<br>";
-            }
+                    $dbco->exec($sql);
+                    echo 'Table bien créée !';
+                    echo "<br>";
+                }
             
-            catch(PDOException $e){
-            echo "Erreur : " . $e->getMessage();
-            } 
+                catch(PDOException $e){
+                    echo "Erreur : " . $e->getMessage();
+                } 
             
         
-            
+                // PERMET D INSERER LES DONNEES DANS LA TABLE CONTACTS
                 $servname = 'localhost';
                 $dbname = 'formulaire';
                 $user = 'root';
@@ -114,10 +112,7 @@
                 " . $conn->error;
                 }
             };
-        
         ?>
-
         </table>
     </body>
-
 </html>

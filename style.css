@@ -18,6 +18,21 @@
     left: 1688px;
 }
 
+td, th {
+    border: 1px solid black; /* bordure pour le tableau admin */
+}
+
+table { /* couleur du fond du tableau */
+    background-color: #D6C9B3;
+    transition-duration: 2s;
+}
+
+table:hover { /* rend la couleur plus foncé quand on met le curseur sur le tableau */
+    background-color: #cfad72;
+}
+
+
+
 @media screen and (max-width: 851px) { /* Quand quelqu'un est sur téléphone, le cadre s'adapte à la taille du téléphone. */
     .card-body:hover  {
         width: 340px;
